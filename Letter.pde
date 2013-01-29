@@ -42,10 +42,5 @@ class Letter {
   
   boolean finished(){
     return(pos.y>=height-1 || pos.y<=aboveCheck);
-  }
-  
-  
-  
-  
-  
+  }  
 }

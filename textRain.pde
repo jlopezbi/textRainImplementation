@@ -2,9 +2,9 @@ import processing.video.*;
 Capture video;
 int[] backgroundPixels;
 int numPixels;
-int numLetters = 100;
+int numLetters = 300;
 float threshold = 31;
-ArrayList <Letter> rain;
+ArrayList rain;
 
 
 
@@ -17,19 +17,18 @@ void setup() {
   backgroundPixels = new int[numPixels];
   loadPixels();
 
-  rain = new ArrayList <Letter> ();
+  rain = new ArrayList();
   for (int i = 0; i< numLetters;i++) {
     genRandLtr();
   }
 }
 
 void draw() {
-  //background(0);
   if (video.available()) {
     video.read();
     video.filter(GRAY);
     image(video, 0, 0, width, height);
-    //updatePixels();
+
   }
   loadPixels();
   for (int i =0;i<rain.size()-1;i++) {
